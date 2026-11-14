@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=5 format=3 uid="uid://cwbkwb80sw6qb"]
 
 [ext_resource type="Script" uid="uid://dask3i7dtqhc8" path="res://script/character_body_2d.gd" id="1_goyt1"]
@@ -16,6 +17,7 @@ position = Vector2(961, 474)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_tnmt1")
+debug_color = Color(0.346661, 0.613287, 0.269763, 0.42)
 
 [node name="ProgressBar" type="ProgressBar" parent="Area2D"]
 offset_left = -161.0
