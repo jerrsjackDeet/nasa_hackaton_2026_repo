@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx8v0ju32xje7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48txk"]
+size = Vector2(2722, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4br3"]
+size = Vector2(111, 151)
+
+[node name="outpost" type="Node2D"]
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(480, 628)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(164, 11.5)
+shape = SubResource("RectangleShape2D_48txk")
+
+[node name="door_post" type="Area2D" parent="."]
+position = Vector2(1041, 596)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_post"]
+position = Vector2(-2.5, -44.5)
+shape = SubResource("RectangleShape2D_a4br3")
+debug_color = Color(0.917673, 0.268049, 0.259466, 0.42)
+
+[node name="door_research1" type="Area2D" parent="."]
+position = Vector2(397, 601)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_research1"]
+position = Vector2(-2.5, -44.5)
+shape = SubResource("RectangleShape2D_a4br3")
+debug_color = Color(0.917673, 0.268049, 0.259466, 0.42)
+
+[node name="door_research2" type="Area2D" parent="."]
+position = Vector2(-179, 600)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_research2"]
+position = Vector2(-2.5, -44.5)
+shape = SubResource("RectangleShape2D_a4br3")
+debug_color = Color(0.917673, 0.268049, 0.259466, 0.42)
+
+[node name="door_research3" type="Area2D" parent="."]
+position = Vector2(1640, 602)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_research3"]
+position = Vector2(-2.5, -44.5)
+shape = SubResource("RectangleShape2D_a4br3")
+debug_color = Color(0.917673, 0.268049, 0.259466, 0.42)
