@@ -1,12 +1,85 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx8v0ju32xje7"]
+[gd_scene load_steps=16 format=3 uid="uid://cx8v0ju32xje7"]
+
+[ext_resource type="Script" uid="uid://dask3i7dtqhc8" path="res://script/character_body_2d.gd" id="1_8xuf0"]
+[ext_resource type="Script" uid="uid://o4hngdx4d3hq" path="res://script/outpost.gd" id="1_i6l24"]
+[ext_resource type="Texture2D" uid="uid://bq4eeu0orq5kw" path="res://assets/character.png" id="2_i6l24"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48txk"]
 size = Vector2(2722, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4br3"]
-size = Vector2(111, 151)
+size = Vector2(208, 205)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f8oru"]
+friction = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqs2q"]
+size = Vector2(85, 128.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyx4s"]
+atlas = ExtResource("2_i6l24")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnmt1"]
+atlas = ExtResource("2_i6l24")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udytp"]
+atlas = ExtResource("2_i6l24")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dpqc"]
+atlas = ExtResource("2_i6l24")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08oim"]
+atlas = ExtResource("2_i6l24")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcgwy"]
+atlas = ExtResource("2_i6l24")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdxhu"]
+atlas = ExtResource("2_i6l24")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7cdtv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyx4s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnmt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udytp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dpqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08oim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcgwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdxhu")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [node name="outpost" type="Node2D"]
+script = ExtResource("1_i6l24")
 
 [node name="floor" type="StaticBody2D" parent="."]
 position = Vector2(480, 628)
@@ -19,30 +92,150 @@ shape = SubResource("RectangleShape2D_48txk")
 position = Vector2(1041, 596)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_post"]
-position = Vector2(-2.5, -44.5)
+position = Vector2(-51, -71.5)
 shape = SubResource("RectangleShape2D_a4br3")
 debug_color = Color(0.917673, 0.268049, 0.259466, 0.42)
 
+[node name="press_hint" type="ColorRect" parent="door_post"]
+visible = false
+offset_left = 21.0
+offset_top = -151.0
+offset_right = 80.0
+offset_bottom = -92.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="door_post/press_hint"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 30
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="door_research1" type="Area2D" parent="."]
-position = Vector2(397, 601)
+position = Vector2(110, 569)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_research1"]
 position = Vector2(-2.5, -44.5)
 shape = SubResource("RectangleShape2D_a4br3")
 debug_color = Color(0.917673, 0.268049, 0.259466, 0.42)
 
-[node name="door_research2" type="Area2D" parent="."]
-position = Vector2(-179, 600)
+[node name="press_hint2" type="ColorRect" parent="door_research1"]
+visible = false
+offset_left = 77.0
+offset_top = -124.0
+offset_right = 136.0
+offset_bottom = -65.0
+color = Color(0, 0, 0, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_research2"]
-position = Vector2(-2.5, -44.5)
-shape = SubResource("RectangleShape2D_a4br3")
-debug_color = Color(0.917673, 0.268049, 0.259466, 0.42)
+[node name="Label" type="Label" parent="door_research1/press_hint2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 30
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="door_research3" type="Area2D" parent="."]
-position = Vector2(1640, 602)
+[node name="char" type="RigidBody2D" parent="."]
+position = Vector2(828, 557)
+mass = 80.0
+physics_material_override = SubResource("PhysicsMaterial_f8oru")
+gravity_scale = 0.5
+script = ExtResource("1_8xuf0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_research3"]
-position = Vector2(-2.5, -44.5)
-shape = SubResource("RectangleShape2D_a4br3")
-debug_color = Color(0.917673, 0.268049, 0.259466, 0.42)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="char"]
+position = Vector2(-4.5, -1.75)
+shape = SubResource("RectangleShape2D_kqs2q")
+
+[node name="UI_task" type="Control" parent="char"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -474.0
+offset_right = 587.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="day_1" type="Control" parent="char/UI_task"]
+anchors_preset = 0
+offset_left = -450.0
+offset_top = -451.0
+offset_right = -410.0
+offset_bottom = -411.0
+
+[node name="day1" type="Label" parent="char/UI_task/day_1"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = -31.0
+offset_right = 282.0
+offset_bottom = 106.0
+theme_override_font_sizes/font_size = 100
+text = "Day 1"
+
+[node name="Label2" type="Label" parent="char/UI_task/day_1"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 136.0
+offset_right = 369.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 50
+text = "* Do Research "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="char/UI_task/day_1"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 207.0
+offset_right = 372.0
+offset_bottom = 276.0
+theme_override_font_sizes/font_size = 50
+text = "* Report to HQ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="char/UI_task/day_1"]
+visible = false
+layout_mode = 0
+offset_left = 55.0
+offset_top = 173.0
+offset_right = 361.0
+offset_bottom = 177.0
+
+[node name="ColorRect2" type="ColorRect" parent="char/UI_task/day_1"]
+visible = false
+layout_mode = 0
+offset_left = 58.0
+offset_top = 243.0
+offset_right = 372.0
+offset_bottom = 247.0
+
+[node name="Camera2D" type="Camera2D" parent="char"]
+offset = Vector2(0, -400)
+zoom = Vector2(0.55, 0.55)
+
+[node name="anim_char" type="AnimatedSprite2D" parent="char"]
+position = Vector2(1, -10)
+scale = Vector2(3.34375, 3.34375)
+sprite_frames = SubResource("SpriteFrames_7cdtv")
+animation = &"idle"
+flip_h = true
+
+[node name="RayCast2D" type="RayCast2D" parent="char"]
+target_position = Vector2(-2, 77)
+
+[connection signal="body_entered" from="door_post" to="char" method="_on_door_post_body_entered"]
+[connection signal="body_exited" from="door_post" to="char" method="_on_door_post_body_exited"]
