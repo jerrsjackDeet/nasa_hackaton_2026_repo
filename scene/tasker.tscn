@@ -1,0 +1,112 @@
+
+[gd_scene load_steps=5 format=3 uid="uid://cwbkwb80sw6qb"]
+
+[ext_resource type="Script" uid="uid://dask3i7dtqhc8" path="res://script/character_body_2d.gd" id="1_goyt1"]
+[ext_resource type="Texture2D" uid="uid://i5m3wlg56hxs" path="res://icon.svg" id="2_yyx4s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnmt1"]
+size = Vector2(288.5, 193)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udytp"]
+size = Vector2(129, 128.5)
+
+[node name="Tasker" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(961, 474)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_tnmt1")
+debug_color = Color(0.346661, 0.613287, 0.269763, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="Area2D"]
+offset_left = -161.0
+offset_top = -180.0
+offset_right = 163.0
+offset_bottom = -133.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(368, 484)
+script = ExtResource("1_goyt1")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-1, -2)
+texture = ExtResource("2_yyx4s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1.5, -1.75)
+shape = SubResource("RectangleShape2D_udytp")
+
+[node name="UI_task" type="Control" parent="CharacterBody2D"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -474.0
+offset_right = 587.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="day_1" type="Control" parent="CharacterBody2D/UI_task"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="day1" type="Label" parent="CharacterBody2D/UI_task/day_1"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 50
+text = "Day 1"
+
+[node name="Label2" type="Label" parent="CharacterBody2D/UI_task/day_1"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 81.0
+offset_right = 216.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 25
+text = "* Do Research "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CharacterBody2D/UI_task/day_1"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 123.0
+offset_right = 217.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 25
+text = "* Report to HQ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D/UI_task/day_1"]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 115.0
+offset_right = 197.0
+offset_bottom = 118.0
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D/UI_task/day_1"]
+visible = false
+layout_mode = 0
+offset_left = 38.0
+offset_top = 156.0
+offset_right = 203.0
+offset_bottom = 159.0
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+offset = Vector2(0, -150)
+
+[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]
