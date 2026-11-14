@@ -7,9 +7,9 @@ func _ready() -> void:
 	pass
 func _process(_delta) -> void:
 	if dalam_task1 == true:
-		$"../UI_task/ProgressBar".value += 0.3
-	if $"../UI_task/ProgressBar".value == 100:
-		$"../UI_task/day_1/ColorRect".visible = true
+		$"../Area2D/ProgressBar".value += 0.3
+	if $"../Area2D/ProgressBar".value == 100:
+		$UI_task/day_1/ColorRect.visible = true
 func _physics_process(_delta) -> void:
 	move_and_slide()
 	var dir = Input.get_axis("ui_left", "ui_right")
