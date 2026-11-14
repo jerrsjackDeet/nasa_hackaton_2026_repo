@@ -1,10 +1,5 @@
 extends CharacterBody2D
 
-# =============================================
-#   PLATFORMER 2D - Godot 4
-#   + Flip kiri / kanan
-# =============================================
-
 @export var speed: float = 200.0
 @export var jump_force: float = -450.0
 
