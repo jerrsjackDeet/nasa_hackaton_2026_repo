@@ -21,22 +21,12 @@ func _process(_delta) -> void:
 		
 		
 	
-	
-	if get_tree().current_scene.scene_file_path == "res://scene/post.tscn":
-		if dalam_task1 == true:
-			$"../Area2D/ProgressBar".value += 0.3
-		if $"../Area2D/ProgressBar" .value == 100:
-			$UI_task/day_1/ColorRect.visible = true
-		
-		
-			
-	
 func _physics_process(_delta) -> void:
 	dir = Input.get_axis("a", "d")
-	linear_velocity.x = dir * 500
+	linear_velocity.x = dir * 300
 	if Input.is_action_pressed("a") or Input.is_action_pressed("d"):
 		if $RayCast2D.is_colliding():
-			linear_velocity.y -= 30
+			linear_velocity.y -= 25
 		
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -1,11 +1,19 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwbkwb80sw6qb"]
+[gd_scene load_steps=23 format=3 uid="uid://cwbkwb80sw6qb"]
 
 [ext_resource type="Script" uid="uid://dask3i7dtqhc8" path="res://script/character_body_2d.gd" id="1_goyt1"]
 [ext_resource type="Script" uid="uid://b1m1l3vqle63c" path="res://script/post.gd" id="1_yyx4s"]
+[ext_resource type="Texture2D" uid="uid://vpkult1nocnr" path="res://assets/bg_post.png" id="2_6ljet"]
 [ext_resource type="Texture2D" uid="uid://bq4eeu0orq5kw" path="res://assets/character.png" id="2_goyt1"]
+[ext_resource type="PackedScene" uid="uid://shwdyuwoek8e" path="res://scene/ui_ux.tscn" id="4_76txx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnmt1"]
-size = Vector2(288.5, 193)
+size = Vector2(220.25, 221.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ljet"]
+size = Vector2(107, 221.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0aubw"]
+size = Vector2(133, 221.5)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_goyt1"]
 friction = 0.0
@@ -76,29 +84,51 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goyt1"]
-size = Vector2(207, 245)
+size = Vector2(112, 288)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yyx4s"]
 size = Vector2(2725, 49)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mepgo"]
+size = Vector2(81, 571.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_no3pq"]
+size = Vector2(81, 566.75)
+
 [node name="post" type="Node2D"]
 script = ExtResource("1_yyx4s")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(961, 474)
+[node name="BgPost" type="Sprite2D" parent="."]
+position = Vector2(678.049, 356)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_6ljet")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="listrik" type="Area2D" parent="."]
+position = Vector2(961, 446)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="listrik"]
+position = Vector2(23.125, -14.25)
 shape = SubResource("RectangleShape2D_tnmt1")
 debug_color = Color(0.346661, 0.613287, 0.269763, 0.42)
 
-[node name="ProgressBar" type="ProgressBar" parent="Area2D"]
-offset_left = -161.0
-offset_top = -180.0
-offset_right = 163.0
-offset_bottom = -133.0
+[node name="medic_center" type="Area2D" parent="."]
+position = Vector2(683, 449)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="medic_center"]
+position = Vector2(-12.5, -14.25)
+shape = SubResource("RectangleShape2D_6ljet")
+debug_color = Color(0.346661, 0.613287, 0.269763, 0.42)
+
+[node name="o2" type="Area2D" parent="."]
+position = Vector2(537, 454)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="o2"]
+position = Vector2(-21.5, -14.25)
+shape = SubResource("RectangleShape2D_0aubw")
+debug_color = Color(0.346661, 0.613287, 0.269763, 0.42)
 
 [node name="char" type="RigidBody2D" parent="."]
-position = Vector2(368, 484)
+position = Vector2(389, 468)
 mass = 80.0
 physics_material_override = SubResource("PhysicsMaterial_goyt1")
 gravity_scale = 0.5
@@ -108,79 +138,12 @@ script = ExtResource("1_goyt1")
 position = Vector2(-4.5, -1.75)
 shape = SubResource("RectangleShape2D_udytp")
 
-[node name="UI_task" type="Control" parent="char"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -474.0
-offset_right = 587.0
-offset_bottom = 186.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="day_1" type="Control" parent="char/UI_task"]
-anchors_preset = 0
-offset_left = -450.0
-offset_top = -451.0
-offset_right = -410.0
-offset_bottom = -411.0
-
-[node name="day1" type="Label" parent="char/UI_task/day_1"]
-layout_mode = 0
-offset_left = 14.0
-offset_top = -31.0
-offset_right = 282.0
-offset_bottom = 106.0
-theme_override_font_sizes/font_size = 100
-text = "Day 1"
-
-[node name="Label2" type="Label" parent="char/UI_task/day_1"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 136.0
-offset_right = 369.0
-offset_bottom = 205.0
-theme_override_font_sizes/font_size = 50
-text = "* Do Research "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="char/UI_task/day_1"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 207.0
-offset_right = 372.0
-offset_bottom = 276.0
-theme_override_font_sizes/font_size = 50
-text = "* Report to HQ"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="char/UI_task/day_1"]
-visible = false
-layout_mode = 0
-offset_left = 55.0
-offset_top = 173.0
-offset_right = 361.0
-offset_bottom = 177.0
-
-[node name="ColorRect2" type="ColorRect" parent="char/UI_task/day_1"]
-visible = false
-layout_mode = 0
-offset_left = 58.0
-offset_top = 243.0
-offset_right = 372.0
-offset_bottom = 247.0
-
 [node name="Camera2D" type="Camera2D" parent="char"]
-offset = Vector2(0, -400)
-zoom = Vector2(0.55, 0.55)
+offset = Vector2(0, -90)
+zoom = Vector2(1.3, 1.3)
+limit_left = 196
+limit_top = 72
+limit_right = 1145
 
 [node name="anim_char" type="AnimatedSprite2D" parent="char"]
 position = Vector2(1, -10)
@@ -192,10 +155,10 @@ animation = &"idle"
 target_position = Vector2(-2, 77)
 
 [node name="door_out_facility" type="Area2D" parent="."]
-position = Vector2(-49, 539)
+position = Vector2(260, 518)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_out_facility"]
-position = Vector2(-52.5, -91.5)
+position = Vector2(-5, -114)
 shape = SubResource("RectangleShape2D_goyt1")
 debug_color = Color(0.917673, 0.268049, 0.259466, 0.42)
 
@@ -219,13 +182,113 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="floor" type="StaticBody2D" parent="."]
-position = Vector2(-247, 589)
+position = Vector2(-247, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 position = Vector2(1312.5, 14.5)
 shape = SubResource("RectangleShape2D_yyx4s")
 
-[connection signal="body_entered" from="Area2D" to="char" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="char" method="_on_area_2d_body_exited"]
+[node name="wall1" type="StaticBody2D" parent="."]
+position = Vector2(-1117, 533)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1"]
+position = Vector2(1271, -236.125)
+shape = SubResource("RectangleShape2D_mepgo")
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2(-83, 532)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2(1271, -233.625)
+shape = SubResource("RectangleShape2D_no3pq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="UI_task" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -784.0
+offset_top = -314.0
+offset_right = 379.0
+offset_bottom = 346.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="day_1" type="Control" parent="CanvasLayer/UI_task"]
+visible = false
+anchors_preset = 0
+offset_left = -450.0
+offset_top = -451.0
+offset_right = -410.0
+offset_bottom = -411.0
+
+[node name="day1" type="Label" parent="CanvasLayer/UI_task/day_1"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = -31.0
+offset_right = 282.0
+offset_bottom = 106.0
+theme_override_font_sizes/font_size = 100
+text = "Day 1"
+
+[node name="Label2" type="Label" parent="CanvasLayer/UI_task/day_1"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 136.0
+offset_right = 369.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 50
+text = "* Do Research "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/UI_task/day_1"]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 207.0
+offset_right = 372.0
+offset_bottom = 276.0
+theme_override_font_sizes/font_size = 50
+text = "* Report to HQ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/UI_task/day_1"]
+visible = false
+layout_mode = 0
+offset_left = 55.0
+offset_top = 173.0
+offset_right = 361.0
+offset_bottom = 177.0
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/UI_task/day_1"]
+visible = false
+layout_mode = 0
+offset_left = 58.0
+offset_top = 243.0
+offset_right = 372.0
+offset_bottom = 247.0
+
+[node name="ui_ux" parent="." instance=ExtResource("4_76txx")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1145, 375)
+
+[connection signal="body_entered" from="listrik" to="char" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="listrik" to="char" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="medic_center" to="char" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="medic_center" to="char" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="o2" to="char" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="o2" to="char" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="door_out_facility" to="char" method="_on_door_out_facility_body_entered"]
 [connection signal="body_exited" from="door_out_facility" to="char" method="_on_door_out_facility_body_exited"]
