@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvn76rbpxxhwg"]
+
+[ext_resource type="Script" uid="uid://cg55xox7qeb57" path="res://scene/endgame_spacenasa/endgame/lose_screen.gd" id="1_s7mfv"]
+[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_ecj20"]
+
+[node name="winperfect" type="Node2D"]
+modulate = Color(1, 1, 1, 0)
+script = ExtResource("1_s7mfv")
+
+[node name="LoseScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="LoseScreen"]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 642.0
+color = Color(0, 0, 0, 0.392157)
+
+[node name="Label" type="Label" parent="LoseScreen/ColorRect"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 182.0
+offset_right = 1050.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("2_ecj20")
+theme_override_font_sizes/font_size = 100
+text = "Better Be An "
+
+[node name="Label" type="Label" parent="LoseScreen"]
+layout_mode = 0
+offset_left = 601.0
+offset_top = 185.0
+offset_right = 1540.0
+offset_bottom = 285.0
+theme_override_colors/font_color = Color(0.992157, 0.8, 0.0509804, 1)
+theme_override_fonts/font = ExtResource("2_ecj20")
+theme_override_font_sizes/font_size = 100
+text = "Austronaut!"
+
+[node name="Label2" type="Label" parent="LoseScreen"]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 270.0
+offset_right = 833.0
+offset_bottom = 321.0
+theme_override_colors/font_color = Color(0.351563, 0.351563, 0.351563, 1)
+theme_override_fonts/font = ExtResource("2_ecj20")
+theme_override_font_sizes/font_size = 50
+text = "Press any key to main menu"
+
+[node name="Label3" type="Label" parent="LoseScreen"]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 357.0
+offset_right = 712.0
+offset_bottom = 408.0
+theme_override_fonts/font = ExtResource("2_ecj20")
+theme_override_font_sizes/font_size = 50
+text = "You Get an A!"

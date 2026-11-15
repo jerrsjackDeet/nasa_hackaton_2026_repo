@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmsj5c6o62cja"]
+
+[ext_resource type="Texture2D" uid="uid://cnyfecvpnma3b" path="res://assets/Panel_Information.png" id="1_s88mh"]
+[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_17ies"]
+
+[node name="narasi" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(558, 431)
+scale = Vector2(0.1772, 0.270216)
+texture = ExtResource("1_s88mh")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 241.0
+offset_top = 289.0
+offset_right = 484.0
+offset_bottom = 329.0
+theme_override_fonts/font = ExtResource("2_17ies")
+theme_override_font_sizes/font_size = 35
+text = "OPERATOR"
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 661.0
+offset_top = 549.0
+offset_right = 1347.0
+offset_bottom = 681.0
+theme_override_fonts/font = ExtResource("2_17ies")
+theme_override_font_sizes/font_size = 29
+text = "Press space to next"
+
+[node name="paragraft 1" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="CanvasLayer/paragraft 1"]
+visible = false
+layout_mode = 0
+offset_left = 237.0
+offset_top = 342.0
+offset_right = 1042.0
+offset_bottom = 603.0
+theme_override_fonts/font = ExtResource("2_17ies")
+theme_override_font_sizes/font_size = 29
+text = "Space looks calm, but invisible cosmic rays and
+solar radiation constantly bombard the Moon's surface!
+Without Earth's thick atmosphere, astronauts on
+the Moon absorb around
+1.37 mSv of radiation per day (measured by Chang'e-4),
+over 200 times higher than on Earth!
+"
+
+[node name="Label4" type="Label" parent="CanvasLayer/paragraft 1"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 371.0
+offset_right = 928.0
+offset_bottom = 503.0
+theme_override_fonts/font = ExtResource("2_17ies")
+theme_override_font_sizes/font_size = 29
+text = "YOUR MISSION: 
+Keep your crew healthy! Activate the Radiation
+Shield when solar activity rises,
+or your astronauts' health will drop rapidly!"

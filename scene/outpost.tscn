@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://cx8v0ju32xje7"]
+[gd_scene load_steps=25 format=3 uid="uid://cx8v0ju32xje7"]
 
 [ext_resource type="Script" uid="uid://dask3i7dtqhc8" path="res://script/character_body_2d.gd" id="1_8xuf0"]
 [ext_resource type="Script" uid="uid://o4hngdx4d3hq" path="res://script/outpost.gd" id="1_i6l24"]
 [ext_resource type="Texture2D" uid="uid://bddioxg1yyejb" path="res://assets/bg_outpost.png" id="2_f8oru"]
 [ext_resource type="Texture2D" uid="uid://bq4eeu0orq5kw" path="res://assets/character.png" id="2_i6l24"]
 [ext_resource type="Texture2D" uid="uid://ckfw7tplfgvuk" path="res://assets/hidroponikbubble.png" id="3_s478e"]
+[ext_resource type="Texture2D" uid="uid://cfn3frkjgjuom" path="res://assets/pos-bulan-roket-debu.png" id="3_tigle"]
 [ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="4_tigle"]
 [ext_resource type="PackedScene" uid="uid://shwdyuwoek8e" path="res://scene/ui_ux.tscn" id="5_kqs2q"]
 [ext_resource type="Texture2D" uid="uid://c3o5d2jet152i" path="res://assets/tombol-masuk-normal.png" id="6_7cdtv"]
@@ -99,6 +100,12 @@ script = ExtResource("1_i6l24")
 position = Vector2(523, 494)
 scale = Vector2(0.692073, 0.692073)
 texture = ExtResource("2_f8oru")
+
+[node name="Pos-bulan-roket-debu" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(508.5, 481.375)
+scale = Vector2(0.687868, 0.611528)
+texture = ExtResource("3_tigle")
 
 [node name="floor" type="StaticBody2D" parent="."]
 position = Vector2(480, 675)

@@ -1,10 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://shwdyuwoek8e"]
+[gd_scene load_steps=16 format=3 uid="uid://shwdyuwoek8e"]
 
 [ext_resource type="Script" uid="uid://bec71hy00qjys" path="res://script/bar_resource.gd" id="1_g4ua4"]
 [ext_resource type="Script" uid="uid://cq860vr8m1fc5" path="res://script/ui_dll.gd" id="1_jq5cw"]
 [ext_resource type="Texture2D" uid="uid://c5b7xsleobc41" path="res://assets/Panel_Bar.png" id="2_0c5nd"]
 [ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_71h1p"]
 [ext_resource type="Texture2D" uid="uid://dngqmevwgfbt1" path="res://assets/sun_icon.png" id="4_fh4cu"]
+[ext_resource type="Texture2D" uid="uid://cnyfecvpnma3b" path="res://assets/Panel_Information.png" id="6_053p3"]
+[ext_resource type="Texture2D" uid="uid://butd6jhupwmp3" path="res://assets/paneltask.png" id="6_ooy7e"]
+[ext_resource type="PackedScene" path="res://scene/narasi.tscn" id="8_bwjk0"]
+[ext_resource type="PackedScene" path="res://scene/narasi2.tscn" id="9_msisx"]
+[ext_resource type="PackedScene" path="res://scene/narasi3.tscn" id="10_pd7dk"]
+[ext_resource type="PackedScene" path="res://scene/narasi4.tscn" id="11_jch1m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71h1p"]
 bg_color = Color(0.921569, 0.0313726, 0.054902, 1)
@@ -192,7 +198,8 @@ show_percentage = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/fill = SubResource("StyleBoxFlat_jq5cw")
-value = 50.0
+max_value = 10.0
+value = 10.0
 show_percentage = false
 
 [node name="Electricity" type="ProgressBar" parent="Control/VBoxContainer"]
@@ -201,3 +208,198 @@ size_flags_vertical = 3
 theme_override_styles/fill = SubResource("StyleBoxFlat_y3jyb")
 value = 50.0
 show_percentage = false
+
+[node name="day_task1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Paneltask" type="Sprite2D" parent="day_task1"]
+position = Vector2(178.688, 139.375)
+scale = Vector2(0.236635, 0.0879888)
+texture = ExtResource("6_ooy7e")
+
+[node name="task1" type="Label" parent="day_task1"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 90.0
+offset_right = 322.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 30
+text = "* Push health to 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="day_task2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Paneltask" type="Sprite2D" parent="day_task2"]
+position = Vector2(178.688, 139.375)
+scale = Vector2(0.236635, 0.0879888)
+texture = ExtResource("6_ooy7e")
+
+[node name="task1" type="Label" parent="day_task2"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 90.0
+offset_right = 322.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 30
+text = "* Push food to 80"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="day_task3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Paneltask" type="Sprite2D" parent="day_task3"]
+position = Vector2(178.688, 139.375)
+scale = Vector2(0.236635, 0.0879888)
+texture = ExtResource("6_ooy7e")
+
+[node name="task1" type="Label" parent="day_task3"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 90.0
+offset_right = 322.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 30
+text = "* Push energy to 70"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="day_task4" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Paneltask" type="Sprite2D" parent="day_task4"]
+position = Vector2(178.688, 139.375)
+scale = Vector2(0.236635, 0.0879888)
+texture = ExtResource("6_ooy7e")
+
+[node name="task1" type="Label" parent="day_task4"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 90.0
+offset_right = 322.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 30
+text = "* Push food to 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="day_task5" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Paneltask" type="Sprite2D" parent="day_task5"]
+position = Vector2(178.688, 139.375)
+scale = Vector2(0.236635, 0.0879888)
+texture = ExtResource("6_ooy7e")
+
+[node name="task1" type="Label" parent="day_task5"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 90.0
+offset_right = 322.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 30
+text = "* Push oxygen to 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelInformation" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(524, 503)
+scale = Vector2(0.194182, 0.194182)
+texture = ExtResource("6_053p3")
+
+[node name="on_node5" type="Label" parent="PanelInformation"]
+offset_left = -1251.4
+offset_top = -61.7976
+offset_right = -1116.4
+offset_bottom = 7.20239
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 17
+text = "on"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mission_complete" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 452.0
+offset_top = 312.0
+offset_right = 492.0
+offset_bottom = 352.0
+
+[node name="ColorRect" type="ColorRect" parent="mission_complete"]
+layout_mode = 0
+offset_left = -457.0
+offset_top = -320.0
+offset_right = 712.0
+offset_bottom = 351.0
+color = Color(0, 0, 0, 0.670588)
+
+[node name="Paneltask" type="Sprite2D" parent="mission_complete"]
+position = Vector2(93, 15)
+scale = Vector2(0.345912, 0.513035)
+texture = ExtResource("6_ooy7e")
+
+[node name="Label" type="Label" parent="mission_complete"]
+layout_mode = 0
+offset_left = -72.0
+offset_top = -89.0
+offset_right = 262.0
+offset_bottom = -38.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 50
+text = "Mission Succesfull"
+
+[node name="Label2" type="Label" parent="mission_complete"]
+layout_mode = 0
+offset_left = -59.0
+offset_top = 51.0
+offset_right = 275.0
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 30
+text = "Press enter to change day"
+
+[node name="narasi" parent="." instance=ExtResource("8_bwjk0")]
+visible = false
+position = Vector2(393, 363)
+
+[node name="narasi2" parent="." instance=ExtResource("9_msisx")]
+visible = false
+
+[node name="narasi3" parent="." instance=ExtResource("10_pd7dk")]
+visible = false
+
+[node name="narasi4" parent="." instance=ExtResource("11_jch1m")]
+visible = false

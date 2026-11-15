@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6mlsw5yckt3y"]
+
+[ext_resource type="Script" uid="uid://vb735gpk8p10" path="res://script/narasi.gd" id="1_gxq3k"]
+[ext_resource type="Texture2D" uid="uid://cnyfecvpnma3b" path="res://assets/Panel_Information.png" id="1_levvm"]
+[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_i1mpy"]
+
+[node name="narasi" type="Node2D"]
+script = ExtResource("1_gxq3k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(558, 431)
+scale = Vector2(0.1772, 0.270216)
+texture = ExtResource("1_levvm")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 241.0
+offset_top = 289.0
+offset_right = 484.0
+offset_bottom = 329.0
+theme_override_fonts/font = ExtResource("2_i1mpy")
+theme_override_font_sizes/font_size = 35
+text = "OPERATOR"
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 661.0
+offset_top = 549.0
+offset_right = 1347.0
+offset_bottom = 681.0
+theme_override_fonts/font = ExtResource("2_i1mpy")
+theme_override_font_sizes/font_size = 29
+text = "Press space to next"
+
+[node name="paragraft 1" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="CanvasLayer/paragraft 1"]
+visible = false
+layout_mode = 0
+offset_left = 240.0
+offset_top = 391.0
+offset_right = 926.0
+offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("2_i1mpy")
+theme_override_font_sizes/font_size = 29
+text = "Electricity is the heartbeat of your lunar base! 
+Without power, your oxygen generator, water filters, and
+heaters will shut down in the freezing dark!"
+
+[node name="Label4" type="Label" parent="CanvasLayer/paragraft 1"]
+visible = false
+layout_mode = 0
+offset_left = 240.0
+offset_top = 390.0
+offset_right = 926.0
+offset_bottom = 522.0
+theme_override_fonts/font = ExtResource("2_i1mpy")
+theme_override_font_sizes/font_size = 29
+text = "NASA designs lunar habitats to run on solar arrays
+and backup batteries, generating around 
+10 to 15 kWh per day to keep a small crew module alive!
+"
+
+[node name="Label5" type="Label" parent="CanvasLayer/paragraft 1"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 370.0
+offset_right = 926.0
+offset_bottom = 502.0
+theme_override_fonts/font = ExtResource("2_i1mpy")
+theme_override_font_sizes/font_size = 29
+text = "YOUR MISSION:
+Every machine you switch ON drains battery power. 
+Watch your power bar closely and turn off non-essential
+systems to save energy!"

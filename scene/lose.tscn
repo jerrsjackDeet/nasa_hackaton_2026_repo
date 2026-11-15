@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://ev7aw8tfyx2x"]
+
+[ext_resource type="Script" uid="uid://cg55xox7qeb57" path="res://scene/endgame_spacenasa/endgame/lose_screen.gd" id="1_dcuqu"]
+[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_0thep"]
+
+[node name="Lose" type="Node2D"]
+modulate = Color(1, 1, 1, 0)
+script = ExtResource("1_dcuqu")
+
+[node name="LoseScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="LoseScreen"]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 642.0
+color = Color(0, 0, 0, 0.392157)
+
+[node name="Label" type="Label" parent="LoseScreen"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 195.0
+offset_right = 996.0
+offset_bottom = 295.0
+theme_override_fonts/font = ExtResource("2_0thep")
+theme_override_font_sizes/font_size = 100
+text = "Better Luck Next Time"
+
+[node name="Label2" type="Label" parent="LoseScreen"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 333.0
+offset_right = 832.0
+offset_bottom = 384.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.368627)
+theme_override_fonts/font = ExtResource("2_0thep")
+theme_override_font_sizes/font_size = 50
+text = "Press any key to main menu"

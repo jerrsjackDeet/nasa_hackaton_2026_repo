@@ -12,10 +12,10 @@ extends VBoxContainer
 
 func _process(delta: float) -> void:
 	
-	elec_sum.text = str(int(Varglob.electrict)) + "/100"
-	food_sum.text = str(int(Varglob.food)) + "/100"
-	o2_sum.text = str(int(Varglob.oksigen)) + "/100"
-	health_sum.text = str(int(Varglob.health)) + "/100"
+	elec_sum.text = str(int(Varglob.electrict)) + "/100 Kwh"
+	food_sum.text = str(int(Varglob.food)) + "/100 Kg"
+	o2_sum.text = str(int(Varglob.oksigen)) + "/10 Kg"
+	health_sum.text = str(int(Varglob.health)) + "/100 Hp"
 	
 	
 	elec_bar.value = Varglob.electrict

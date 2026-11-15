@@ -76,6 +76,5 @@ func _on_medic_center_body_exited(body: Node2D) -> void:
 func _on_listrik_body_entered(body: Node2D) -> void:
 	Varglob.ask_in_elect = true
 
-
 func _on_listrik_body_exited(body: Node2D) -> void:
 	Varglob.ask_in_elect = false
