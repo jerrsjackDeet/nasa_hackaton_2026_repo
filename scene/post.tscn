@@ -1,11 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://cwbkwb80sw6qb"]
+[gd_scene load_steps=28 format=3 uid="uid://cwbkwb80sw6qb"]
 
 [ext_resource type="Script" uid="uid://dask3i7dtqhc8" path="res://script/character_body_2d.gd" id="1_goyt1"]
 [ext_resource type="Script" uid="uid://b1m1l3vqle63c" path="res://script/post.gd" id="1_yyx4s"]
 [ext_resource type="Texture2D" uid="uid://vpkult1nocnr" path="res://assets/bg_post.png" id="2_6ljet"]
 [ext_resource type="Texture2D" uid="uid://bq4eeu0orq5kw" path="res://assets/character.png" id="2_goyt1"]
+[ext_resource type="Texture2D" uid="uid://dcrqtc088xpyf" path="res://assets/oxygenbubble.png" id="3_no3pq"]
+[ext_resource type="Texture2D" uid="uid://m1xuec3bdfme" path="res://assets/energybubble.png" id="3_tlfdn"]
+[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="4_07pa8"]
 [ext_resource type="PackedScene" uid="uid://shwdyuwoek8e" path="res://scene/ui_ux.tscn" id="4_76txx"]
 [ext_resource type="Texture2D" uid="uid://c3o5d2jet152i" path="res://assets/tombol-masuk-normal.png" id="5_0aubw"]
+[ext_resource type="Texture2D" uid="uid://csgjpqcffhdmq" path="res://assets/medis&radiation_bubble.png" id="6_h4xw4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnmt1"]
 size = Vector2(220.25, 221.5)
@@ -107,6 +111,40 @@ texture = ExtResource("2_6ljet")
 [node name="listrik" type="Area2D" parent="."]
 position = Vector2(961, 446)
 
+[node name="Energybubble" type="Sprite2D" parent="listrik"]
+position = Vector2(107, -39)
+scale = Vector2(0.575893, 0.575893)
+texture = ExtResource("3_tlfdn")
+
+[node name="Tombol-masuk-normal" type="Sprite2D" parent="listrik/Energybubble"]
+position = Vector2(27.783, 152.806)
+scale = Vector2(0.474304, 0.474304)
+texture = ExtResource("5_0aubw")
+
+[node name="Label" type="Label" parent="listrik/Energybubble"]
+offset_left = -85.7624
+offset_top = -83.2447
+offset_right = 93.2376
+offset_bottom = -41.2447
+theme_override_fonts/font = ExtResource("4_07pa8")
+theme_override_font_sizes/font_size = 41
+text = "GENERATOR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="listrik/Energybubble/Label"]
+offset_left = -3.35706
+offset_top = 57.9093
+offset_right = 175.643
+offset_bottom = 120.909
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_07pa8")
+theme_override_font_sizes/font_size = 29
+text = "Use this to add
+Energy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="listrik"]
 position = Vector2(23.125, -14.25)
 shape = SubResource("RectangleShape2D_tnmt1")
@@ -115,6 +153,40 @@ debug_color = Color(0.346661, 0.613287, 0.269763, 0.42)
 [node name="medic_center" type="Area2D" parent="."]
 position = Vector2(683, 449)
 
+[node name="Medis&radiationBubble" type="Sprite2D" parent="medic_center"]
+position = Vector2(-19, -137)
+scale = Vector2(0.610714, 0.610714)
+texture = ExtResource("6_h4xw4")
+
+[node name="Tombol-masuk-normal" type="Sprite2D" parent="medic_center/Medis&radiationBubble"]
+position = Vector2(22.9241, 145.731)
+scale = Vector2(0.44726, 0.44726)
+texture = ExtResource("5_0aubw")
+
+[node name="Label" type="Label" parent="medic_center/Medis&radiationBubble"]
+offset_left = -132.632
+offset_top = -83.5088
+offset_right = 136.368
+offset_bottom = -41.5088
+theme_override_fonts/font = ExtResource("4_07pa8")
+theme_override_font_sizes/font_size = 28
+text = "MEDIS & RADIATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="medic_center/Medis&radiationBubble/Label"]
+offset_left = 43.512
+offset_top = 58.1734
+offset_right = 222.512
+offset_bottom = 121.173
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_07pa8")
+theme_override_font_sizes/font_size = 29
+text = "Use this to add
+Health"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="medic_center"]
 position = Vector2(-12.5, -14.25)
 shape = SubResource("RectangleShape2D_6ljet")
@@ -122,6 +194,40 @@ debug_color = Color(0.346661, 0.613287, 0.269763, 0.42)
 
 [node name="o2" type="Area2D" parent="."]
 position = Vector2(537, 454)
+
+[node name="Oxygenbubble" type="Sprite2D" parent="o2"]
+position = Vector2(-52, -172)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_no3pq")
+
+[node name="Tombol-masuk-normal" type="Sprite2D" parent="o2/Oxygenbubble"]
+position = Vector2(48.3333, 148.333)
+scale = Vector2(0.455247, 0.455247)
+texture = ExtResource("5_0aubw")
+
+[node name="Label" type="Label" parent="o2/Oxygenbubble"]
+offset_left = -85.7624
+offset_top = -83.2447
+offset_right = 93.2376
+offset_bottom = -41.2447
+theme_override_fonts/font = ExtResource("4_07pa8")
+theme_override_font_sizes/font_size = 41
+text = "OXYGEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="o2/Oxygenbubble/Label"]
+offset_left = -3.35706
+offset_top = 57.9093
+offset_right = 175.643
+offset_bottom = 120.909
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_07pa8")
+theme_override_font_sizes/font_size = 29
+text = "Use this to add
+Oxygen"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="o2"]
 position = Vector2(-21.5, -14.25)
@@ -271,11 +377,17 @@ offset_bottom = 247.0
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1145, 375)
 
+[connection signal="body_entered" from="listrik" to="char" method="_on_listrik_body_entered"]
 [connection signal="body_entered" from="listrik" to="char" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="listrik" to="char" method="_on_listrik_body_exited"]
 [connection signal="body_exited" from="listrik" to="char" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="medic_center" to="char" method="_on_medic_center_body_entered"]
 [connection signal="body_entered" from="medic_center" to="char" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="medic_center" to="char" method="_on_medic_center_body_exited"]
 [connection signal="body_exited" from="medic_center" to="char" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="o2" to="char" method="_on_o_2_body_entered"]
 [connection signal="body_entered" from="o2" to="char" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="o2" to="char" method="_on_o_2_body_exited"]
 [connection signal="body_exited" from="o2" to="char" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="door_out_facility" to="char" method="_on_door_out_facility_body_entered"]
 [connection signal="body_exited" from="door_out_facility" to="char" method="_on_door_out_facility_body_exited"]

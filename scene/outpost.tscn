@@ -1,9 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://cx8v0ju32xje7"]
+[gd_scene load_steps=24 format=3 uid="uid://cx8v0ju32xje7"]
 
 [ext_resource type="Script" uid="uid://dask3i7dtqhc8" path="res://script/character_body_2d.gd" id="1_8xuf0"]
 [ext_resource type="Script" uid="uid://o4hngdx4d3hq" path="res://script/outpost.gd" id="1_i6l24"]
 [ext_resource type="Texture2D" uid="uid://bddioxg1yyejb" path="res://assets/bg_outpost.png" id="2_f8oru"]
 [ext_resource type="Texture2D" uid="uid://bq4eeu0orq5kw" path="res://assets/character.png" id="2_i6l24"]
+[ext_resource type="Texture2D" uid="uid://ckfw7tplfgvuk" path="res://assets/hidroponikbubble.png" id="3_s478e"]
+[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="4_tigle"]
 [ext_resource type="PackedScene" uid="uid://shwdyuwoek8e" path="res://scene/ui_ux.tscn" id="5_kqs2q"]
 [ext_resource type="Texture2D" uid="uid://c3o5d2jet152i" path="res://assets/tombol-masuk-normal.png" id="6_7cdtv"]
 
@@ -122,61 +124,42 @@ shape = SubResource("RectangleShape2D_lacg4")
 [node name="hidroponik" type="Area2D" parent="."]
 position = Vector2(110, 616)
 
+[node name="Hidroponikbubble" type="Sprite2D" parent="hidroponik"]
+position = Vector2(-392, -285)
+scale = Vector2(1.19152, 1.19152)
+texture = ExtResource("3_s478e")
+
+[node name="Label" type="Label" parent="hidroponik/Hidroponikbubble"]
+offset_left = -85.7624
+offset_top = -83.2447
+offset_right = 93.2376
+offset_bottom = -41.2447
+theme_override_fonts/font = ExtResource("4_tigle")
+theme_override_font_sizes/font_size = 41
+text = "HIDROPONIK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="hidroponik/Hidroponikbubble/Label"]
+offset_left = -3.35706
+offset_top = 57.9093
+offset_right = 175.643
+offset_bottom = 120.909
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_tigle")
+theme_override_font_sizes/font_size = 29
+text = "Use this to add
+Supplies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hidroponik"]
 position = Vector2(-183.75, -44.5)
 shape = SubResource("RectangleShape2D_f8oru")
 debug_color = Color(0.411129, 0.604346, 0.132725, 0.42)
 
-[node name="hint_hidro" type="ColorRect" parent="hidroponik"]
-offset_left = -509.0
-offset_top = -203.0
-offset_right = -254.0
-offset_bottom = -4.0
-color = Color(1, 0.992157, 1, 1)
-
-[node name="hint_hidro2" type="ColorRect" parent="hidroponik/hint_hidro"]
-layout_mode = 0
-offset_right = 255.0
-offset_bottom = 76.0
-color = Color(0.0784314, 0.662745, 0.443137, 1)
-
-[node name="Label" type="Label" parent="hidroponik/hint_hidro"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -81.0
-offset_top = 16.0
-offset_right = 81.0
-offset_bottom = 58.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 35
-text = "Hidroponik"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="hidroponik/hint_hidro"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -104.5
-offset_top = 1.5
-offset_right = 104.5
-offset_bottom = 60.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "use this to 
-add supplies"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Tombol-masuk-normal2" type="Sprite2D" parent="hidroponik"]
-position = Vector2(-395, -278)
+position = Vector2(-361, -110)
 scale = Vector2(0.532407, 0.532407)
 texture = ExtResource("6_7cdtv")
 

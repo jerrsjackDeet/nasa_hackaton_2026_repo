@@ -55,3 +55,27 @@ func _on_hidroponik_body_entered(body: Node2D) -> void:
 
 func _on_hidroponik_body_exited(body: Node2D) -> void:
 	Varglob.ask_in_hidro = false
+
+
+func _on_o_2_body_entered(body: Node2D) -> void:
+	Varglob.ask_in_o2 = true
+
+
+func _on_o_2_body_exited(body: Node2D) -> void:
+	Varglob.ask_in_o2 = false
+
+
+func _on_medic_center_body_entered(body: Node2D) -> void:
+	Varglob.ask_in_health = true
+
+
+func _on_medic_center_body_exited(body: Node2D) -> void:
+	Varglob.ask_in_health = false
+
+
+func _on_listrik_body_entered(body: Node2D) -> void:
+	Varglob.ask_in_elect = true
+
+
+func _on_listrik_body_exited(body: Node2D) -> void:
+	Varglob.ask_in_elect = false

@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	
 	
 	if Varglob.ask_in_hidro == true:
-		$hidroponik/hint_hidro.visible = true
+		$hidroponik/Hidroponikbubble.visible = true
 		$"hidroponik/Tombol-masuk-normal2".visible = true
 		if Input.is_action_just_pressed("f") and Varglob.hidro_on == false:
 			Varglob.hidro_on = true
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 		elif Input.is_action_just_pressed("f") and Varglob.hidro_on == true:
 			Varglob.hidro_on = false
 	else:
-		$hidroponik/hint_hidro.visible = false
+		$hidroponik/Hidroponikbubble.visible = false
 		$"hidroponik/Tombol-masuk-normal2".visible = false
 		
 		

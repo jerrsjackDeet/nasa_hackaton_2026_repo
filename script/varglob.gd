@@ -3,6 +3,9 @@ extends Node
 var ask_in_post = false
 var ask_out_post = false
 var ask_in_hidro = false
+var ask_in_o2 = false
+var ask_in_health = false
+var ask_in_elect = false
 
 var electrict = 50
 var food = 50
