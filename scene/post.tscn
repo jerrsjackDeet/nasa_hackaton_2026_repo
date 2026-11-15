@@ -133,6 +133,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="listrik/Energybubble/Label"]
+layout_mode = 0
 offset_left = -3.35706
 offset_top = 57.9093
 offset_right = 175.643
@@ -175,6 +176,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="medic_center/Medis&radiationBubble/Label"]
+layout_mode = 0
 offset_left = 43.512
 offset_top = 58.1734
 offset_right = 222.512
@@ -217,6 +219,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="o2/Oxygenbubble/Label"]
+layout_mode = 0
 offset_left = -3.35706
 offset_top = 57.9093
 offset_right = 175.643

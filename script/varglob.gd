@@ -14,7 +14,7 @@ var health = 50
 
 var hidro_on = false
 var o2_on = false
-var food_on = false
+var elect_on = false
 var health_on = false
 
 enum day { day1, day2, day3}
@@ -24,7 +24,7 @@ var nowday
 
 
 func _ready() -> void:
-	nowday =  day.day3
+	nowday =  day.day1
 func _process(delta: float) -> void:
 	
 	oksigen -= 0.5 * delta
@@ -33,7 +33,17 @@ func _process(delta: float) -> void:
 	oksigen = clamp(oksigen, 0, 100)
 	health = clamp(health, 0, 100)
 	if hidro_on == true:
-		food += 1 * delta
+		food += 1.5 * delta
 		electrict -= 0.5 * delta
+	if o2_on == true:
+		oksigen += 2 * delta
+		electrict -= 1 * delta
+	if elect_on == true:
+		electrict += 1 * delta
+		food -= 0.5 * delta
+	if health_on == true:
+		health += 2 * delta
+		electrict -= 1 * delta
+		
 		
 	
