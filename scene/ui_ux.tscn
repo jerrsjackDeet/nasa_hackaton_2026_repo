@@ -1,7 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://shwdyuwoek8e"]
+[gd_scene load_steps=10 format=3 uid="uid://shwdyuwoek8e"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3jyb"]
-bg_color = Color(0.921569, 0.796078, 0.054902, 1)
+[ext_resource type="Script" uid="uid://bec71hy00qjys" path="res://script/bar_resource.gd" id="1_g4ua4"]
+[ext_resource type="Script" uid="uid://cq860vr8m1fc5" path="res://script/ui_dll.gd" id="1_jq5cw"]
+[ext_resource type="Texture2D" uid="uid://c5b7xsleobc41" path="res://assets/Panel_Bar.png" id="2_0c5nd"]
+[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_71h1p"]
+[ext_resource type="Texture2D" uid="uid://dngqmevwgfbt1" path="res://assets/sun_icon.png" id="4_fh4cu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71h1p"]
+bg_color = Color(0.921569, 0.0313726, 0.054902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4ua4"]
 bg_color = Color(0.172549, 0.835294, 0.054902, 1)
@@ -9,8 +15,8 @@ bg_color = Color(0.172549, 0.835294, 0.054902, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq5cw"]
 bg_color = Color(0.00392157, 0.454902, 0.858824, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71h1p"]
-bg_color = Color(0.921569, 0.0313726, 0.054902, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3jyb"]
+bg_color = Color(0.921569, 0.796078, 0.054902, 1)
 
 [node name="ui_ux" type="CanvasLayer"]
 
@@ -19,69 +25,135 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 662.0
+script = ExtResource("1_jq5cw")
+
+[node name="PanelBar" type="Sprite2D" parent="Control"]
+position = Vector2(977, 144)
+scale = Vector2(0.284965, 0.284965)
+texture = ExtResource("2_0c5nd")
+
+[node name="SunIcon" type="Sprite2D" parent="Control"]
+position = Vector2(51, 63)
+scale = Vector2(0.257576, 0.257576)
+texture = ExtResource("4_fh4cu")
 
 [node name="day" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 13.0
-offset_right = 155.0
-offset_bottom = 82.0
-theme_override_font_sizes/font_size = 50
+offset_left = 105.0
+offset_top = 10.0
+offset_right = 292.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 100
 text = "Day 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="100" type="Label" parent="Control"]
+[node name="101_food" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 1014.0
-offset_top = -23.0
+offset_top = 73.0
 offset_right = 1149.0
-offset_bottom = 46.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
 theme_override_font_sizes/font_size = 20
 text = "/100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="104" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 976.0
-offset_top = -23.0
-offset_right = 1111.0
-offset_bottom = 46.0
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="101" type="Label" parent="Control"]
+[node name="102_o2" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 1014.0
-offset_top = 20.0
+offset_top = 124.0
 offset_right = 1149.0
-offset_bottom = 89.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
 theme_override_font_sizes/font_size = 20
 text = "/100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="102" type="Label" parent="Control"]
+[node name="103_health" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 1014.0
-offset_top = 65.0
+offset_top = 22.0
 offset_right = 1149.0
-offset_bottom = 134.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
 theme_override_font_sizes/font_size = 20
 text = "/100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="103" type="Label" parent="Control"]
+[node name="100_electrict" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 1014.0
-offset_top = 107.0
+offset_top = 174.0
 offset_right = 1149.0
-offset_bottom = 176.0
+offset_bottom = 243.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
 theme_override_font_sizes/font_size = 20
 text = "/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="on_node" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 863.0
+offset_top = 17.0
+offset_right = 998.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 17
+text = "on"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="on_node2" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 878.0
+offset_top = 69.0
+offset_right = 1013.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 17
+text = "on"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="on_node3" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 870.0
+offset_top = 121.0
+offset_right = 1005.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 17
+text = "on"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="on_node4" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 870.0
+offset_top = 173.0
+offset_right = 1005.0
+offset_bottom = 242.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_71h1p")
+theme_override_font_sizes/font_size = 17
+text = "on"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -92,19 +164,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 200.0
-offset_top = -306.0
-offset_right = 551.0
-offset_bottom = -162.0
+offset_left = 253.0
+offset_top = -262.0
+offset_right = 545.0
+offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 33
 alignment = 1
+script = ExtResource("1_g4ua4")
 
-[node name="Electricity" type="ProgressBar" parent="Control/VBoxContainer"]
+[node name="health" type="ProgressBar" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/fill = SubResource("StyleBoxFlat_y3jyb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_71h1p")
 value = 50.0
 show_percentage = false
 
@@ -122,9 +195,9 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_jq5cw")
 value = 50.0
 show_percentage = false
 
-[node name="health" type="ProgressBar" parent="Control/VBoxContainer"]
+[node name="Electricity" type="ProgressBar" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/fill = SubResource("StyleBoxFlat_71h1p")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y3jyb")
 value = 50.0
 show_percentage = false

@@ -2,9 +2,7 @@ extends RigidBody2D
 
 var dir
 var dalam_task1 = false
-var ask_go_out = false
-var ask_in_post = false
-var ask_in_hidro = false
+
 
 func _ready() -> void:
 	pass
@@ -49,3 +47,11 @@ func _on_door_post_body_entered(body: Node2D) -> void:
 
 func _on_door_post_body_exited(body: Node2D) -> void:
 	Varglob.ask_in_post = false
+
+
+func _on_hidroponik_body_entered(body: Node2D) -> void:
+	Varglob.ask_in_hidro = true
+
+
+func _on_hidroponik_body_exited(body: Node2D) -> void:
+	Varglob.ask_in_hidro = false

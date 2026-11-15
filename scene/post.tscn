@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://cwbkwb80sw6qb"]
+[gd_scene load_steps=24 format=3 uid="uid://cwbkwb80sw6qb"]
 
 [ext_resource type="Script" uid="uid://dask3i7dtqhc8" path="res://script/character_body_2d.gd" id="1_goyt1"]
 [ext_resource type="Script" uid="uid://b1m1l3vqle63c" path="res://script/post.gd" id="1_yyx4s"]
 [ext_resource type="Texture2D" uid="uid://vpkult1nocnr" path="res://assets/bg_post.png" id="2_6ljet"]
 [ext_resource type="Texture2D" uid="uid://bq4eeu0orq5kw" path="res://assets/character.png" id="2_goyt1"]
 [ext_resource type="PackedScene" uid="uid://shwdyuwoek8e" path="res://scene/ui_ux.tscn" id="4_76txx"]
+[ext_resource type="Texture2D" uid="uid://c3o5d2jet152i" path="res://assets/tombol-masuk-normal.png" id="5_0aubw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnmt1"]
 size = Vector2(220.25, 221.5)
@@ -157,29 +158,15 @@ target_position = Vector2(-2, 77)
 [node name="door_out_facility" type="Area2D" parent="."]
 position = Vector2(260, 518)
 
+[node name="Tombol-masuk-normal" type="Sprite2D" parent="door_out_facility"]
+position = Vector2(-8, -231)
+scale = Vector2(0.273148, 0.273148)
+texture = ExtResource("5_0aubw")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_out_facility"]
 position = Vector2(-5, -114)
 shape = SubResource("RectangleShape2D_goyt1")
 debug_color = Color(0.917673, 0.268049, 0.259466, 0.42)
-
-[node name="press_hint" type="ColorRect" parent="door_out_facility"]
-visible = false
-offset_left = 21.0
-offset_top = -151.0
-offset_right = 80.0
-offset_bottom = -92.0
-color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="door_out_facility/press_hint"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 8.0
-offset_right = 50.0
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 30
-text = "F"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="floor" type="StaticBody2D" parent="."]
 position = Vector2(-247, 561)

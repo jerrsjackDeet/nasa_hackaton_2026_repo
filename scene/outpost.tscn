@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://cx8v0ju32xje7"]
+[gd_scene load_steps=22 format=3 uid="uid://cx8v0ju32xje7"]
 
 [ext_resource type="Script" uid="uid://dask3i7dtqhc8" path="res://script/character_body_2d.gd" id="1_8xuf0"]
 [ext_resource type="Script" uid="uid://o4hngdx4d3hq" path="res://script/outpost.gd" id="1_i6l24"]
 [ext_resource type="Texture2D" uid="uid://bddioxg1yyejb" path="res://assets/bg_outpost.png" id="2_f8oru"]
 [ext_resource type="Texture2D" uid="uid://bq4eeu0orq5kw" path="res://assets/character.png" id="2_i6l24"]
 [ext_resource type="PackedScene" uid="uid://shwdyuwoek8e" path="res://scene/ui_ux.tscn" id="5_kqs2q"]
+[ext_resource type="Texture2D" uid="uid://c3o5d2jet152i" path="res://assets/tombol-masuk-normal.png" id="6_7cdtv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48txk"]
 size = Vector2(2722, 21)
@@ -14,9 +15,6 @@ size = Vector2(112.25, 764.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lacg4"]
 size = Vector2(112.25, 764.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4br3"]
-size = Vector2(208, 205)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8oru"]
 size = Vector2(570.5, 205)
@@ -89,6 +87,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4br3"]
+size = Vector2(208, 205)
+
 [node name="outpost" type="Node2D"]
 script = ExtResource("1_i6l24")
 
@@ -118,32 +119,6 @@ position = Vector2(1549, 684)
 position = Vector2(-44, -378.875)
 shape = SubResource("RectangleShape2D_lacg4")
 
-[node name="door_post" type="Area2D" parent="."]
-position = Vector2(1041, 643)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_post"]
-position = Vector2(-51, -71.5)
-shape = SubResource("RectangleShape2D_a4br3")
-debug_color = Color(0.917673, 0.268049, 0.259466, 0.42)
-
-[node name="press_hint" type="ColorRect" parent="door_post"]
-offset_left = 19.0
-offset_top = -157.0
-offset_right = 97.0
-offset_bottom = -85.0
-color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="door_post/press_hint"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 2.0
-offset_right = 60.0
-offset_bottom = 71.0
-theme_override_font_sizes/font_size = 50
-text = "F"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="hidroponik" type="Area2D" parent="."]
 position = Vector2(110, 616)
 
@@ -152,24 +127,58 @@ position = Vector2(-183.75, -44.5)
 shape = SubResource("RectangleShape2D_f8oru")
 debug_color = Color(0.411129, 0.604346, 0.132725, 0.42)
 
-[node name="press_hint2" type="ColorRect" parent="hidroponik"]
-visible = false
-offset_left = 77.0
-offset_top = -124.0
-offset_right = 136.0
-offset_bottom = -65.0
-color = Color(0, 0, 0, 1)
+[node name="hint_hidro" type="ColorRect" parent="hidroponik"]
+offset_left = -509.0
+offset_top = -203.0
+offset_right = -254.0
+offset_bottom = -4.0
+color = Color(1, 0.992157, 1, 1)
 
-[node name="Label" type="Label" parent="hidroponik/press_hint2"]
+[node name="hint_hidro2" type="ColorRect" parent="hidroponik/hint_hidro"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 8.0
-offset_right = 50.0
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 30
-text = "F"
+offset_right = 255.0
+offset_bottom = 76.0
+color = Color(0.0784314, 0.662745, 0.443137, 1)
+
+[node name="Label" type="Label" parent="hidroponik/hint_hidro"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.0
+offset_top = 16.0
+offset_right = 81.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "Hidroponik"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="hidroponik/hint_hidro"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.5
+offset_top = 1.5
+offset_right = 104.5
+offset_bottom = 60.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "use this to 
+add supplies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tombol-masuk-normal2" type="Sprite2D" parent="hidroponik"]
+position = Vector2(-395, -278)
+scale = Vector2(0.532407, 0.532407)
+texture = ExtResource("6_7cdtv")
 
 [node name="char" type="RigidBody2D" parent="."]
 position = Vector2(746, 557)
@@ -201,6 +210,21 @@ target_position = Vector2(-2, 77)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-428, 357)
+
+[node name="ui_ux" parent="." instance=ExtResource("5_kqs2q")]
+
+[node name="door_post" type="Area2D" parent="."]
+position = Vector2(1041, 643)
+
+[node name="Tombol-masuk-normal" type="Sprite2D" parent="door_post"]
+position = Vector2(-241, -276)
+scale = Vector2(0.532407, 0.532407)
+texture = ExtResource("6_7cdtv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_post"]
+position = Vector2(-51, -71.5)
+shape = SubResource("RectangleShape2D_a4br3")
+debug_color = Color(0.917673, 0.268049, 0.259466, 0.42)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
@@ -279,7 +303,7 @@ offset_top = 243.0
 offset_right = 372.0
 offset_bottom = 247.0
 
-[node name="ui_ux" parent="." instance=ExtResource("5_kqs2q")]
-
+[connection signal="body_entered" from="hidroponik" to="char" method="_on_hidroponik_body_entered"]
+[connection signal="body_exited" from="hidroponik" to="char" method="_on_hidroponik_body_exited"]
 [connection signal="body_entered" from="door_post" to="char" method="_on_door_post_body_entered"]
 [connection signal="body_exited" from="door_post" to="char" method="_on_door_post_body_exited"]
