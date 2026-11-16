@@ -1,11 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvn76rbpxxhwg"]
 
-[ext_resource type="Script" uid="uid://cg55xox7qeb57" path="res://scene/endgame_spacenasa/endgame/lose_screen.gd" id="1_s7mfv"]
+[ext_resource type="Script" uid="uid://dnweq2bhv73dh" path="res://script/endgame.gd" id="1_ftwkh"]
 [ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_ecj20"]
 
 [node name="winperfect" type="Node2D"]
-modulate = Color(1, 1, 1, 0)
-script = ExtResource("1_s7mfv")
+script = ExtResource("1_ftwkh")
 
 [node name="LoseScreen" type="Control" parent="."]
 layout_mode = 3
@@ -21,7 +20,7 @@ size_flags_vertical = 3
 layout_mode = 0
 offset_right = 1148.0
 offset_bottom = 642.0
-color = Color(0, 0, 0, 0.392157)
+color = Color(0, 0, 0, 0.662745)
 
 [node name="Label" type="Label" parent="LoseScreen/ColorRect"]
 layout_mode = 0
@@ -47,9 +46,9 @@ text = "Austronaut!"
 [node name="Label2" type="Label" parent="LoseScreen"]
 layout_mode = 0
 offset_left = 303.0
-offset_top = 270.0
+offset_top = 286.0
 offset_right = 833.0
-offset_bottom = 321.0
+offset_bottom = 337.0
 theme_override_colors/font_color = Color(0.351563, 0.351563, 0.351563, 1)
 theme_override_fonts/font = ExtResource("2_ecj20")
 theme_override_font_sizes/font_size = 50

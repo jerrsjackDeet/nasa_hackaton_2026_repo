@@ -24,6 +24,9 @@ var badai_matahari
 var debu_bulan
 
 var dayend = false
+var winP = false
+var winG = false
+var losegame = false
 
 func _ready() -> void:
 	nowday =  day.day1
@@ -32,6 +35,9 @@ func _ready() -> void:
 	print(badai_matahari)
 func _process(delta: float) -> void:
 	
+	
+	if electrict <= 0 or food <= 0 or oksigen <= 0 or health <= 0:
+		losegame = true
 	
 	if nowday == day.day1:
 		_day_1()
@@ -44,7 +50,7 @@ func _process(delta: float) -> void:
 	elif nowday == day.day5:
 		_day_5()
 	
-	if dayend == false:
+	if dayend == false and winG == false and winP == false and losegame == false:
 		oksigen -= 0.2 * delta
 		electrict = clamp(electrict, 0, 100)
 		food = clamp(food, 0, 100)
@@ -64,8 +70,7 @@ func _process(delta: float) -> void:
 			electrict -= 1 * delta
 		
 	
-	elif electrict <= 0 or food <= 0 or oksigen <= 0 and health <= 0:
-			get_tree().change_scene_to_file("res://scene/wingood.tscn")
+	
 	
 	
 	if dayend == true:
@@ -79,11 +84,12 @@ func _process(delta: float) -> void:
 			elif nowday == day.day4:
 				nowday = day.day5
 			dayend = false
-		
+	
+
+	
 func _day_1():
 	if health >= 100:
 		dayend = true
-		
 func _day_2():
 	if food >= 80:
 		dayend = true
@@ -91,12 +97,12 @@ func _day_3():
 	if electrict >= 70:
 		dayend = true
 func _day_4():
-	if food >= 100:
+	if oksigen >= 10:
 		dayend = true
 func _day_5():
-	if oksigen >= 10:
+	if food >= 100:
 		if electrict >= 50 and food >= 50 and oksigen >= 10 and health >= 50:
-			get_tree().change_scene_to_file("res://scene/winperfect.tscn")
-		elif electrict <= 50 or food <= 50 or oksigen <= 50 and health <= 50:
-			get_tree().change_scene_to_file("res://scene/wingood.tscn")
+			winP = true
+		elif electrict <= 50 or food <= 50 or oksigen <= 50 or health <= 50:
+			winG = true
 		
