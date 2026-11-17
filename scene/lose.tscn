@@ -13,12 +13,17 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.275
+anchor_bottom = 0.15
 offset_right = 1148.0
 offset_bottom = 642.0
 color = Color(0.196078, 0.196078, 0.196078, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 164.0
 offset_top = 195.0
 offset_right = 996.0
@@ -29,6 +34,7 @@ text = "Better Luck Next Time"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 302.0
 offset_top = 333.0
 offset_right = 832.0
