@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://shwdyuwoek8e"]
+[gd_scene load_steps=16 format=3 uid="uid://shwdyuwoek8e"]
 
+[ext_resource type="PackedScene" uid="uid://uk8n6376sly8" path="res://scene/lose.tscn" id="1_a6grp"]
 [ext_resource type="Script" uid="uid://bec71hy00qjys" path="res://script/bar_resource.gd" id="1_g4ua4"]
 [ext_resource type="Script" uid="uid://cq860vr8m1fc5" path="res://script/ui_dll.gd" id="1_jq5cw"]
 [ext_resource type="Texture2D" uid="uid://c5b7xsleobc41" path="res://assets/Panel_Bar.png" id="2_0c5nd"]
 [ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_71h1p"]
+[ext_resource type="Script" uid="uid://ddv4kcy8t6nup" path="res://script/lose.gd" id="2_bwjk0"]
 [ext_resource type="Texture2D" uid="uid://dngqmevwgfbt1" path="res://assets/sun_icon.png" id="4_fh4cu"]
 [ext_resource type="Texture2D" uid="uid://cnyfecvpnma3b" path="res://assets/Panel_Information.png" id="6_053p3"]
 [ext_resource type="Texture2D" uid="uid://butd6jhupwmp3" path="res://assets/paneltask.png" id="6_ooy7e"]
-[ext_resource type="PackedScene" uid="uid://bkyyf2380xkah" path="res://scene/failed.tscn" id="8_xdste"]
 [ext_resource type="PackedScene" uid="uid://r4vj0e2t6fg7" path="res://scene/wingood.tscn" id="9_a6grp"]
 [ext_resource type="PackedScene" uid="uid://cvn76rbpxxhwg" path="res://scene/winperfect.tscn" id="10_bwjk0"]
 
@@ -24,6 +25,9 @@ bg_color = Color(0.00392157, 0.454902, 0.858824, 1)
 bg_color = Color(0.921569, 0.796078, 0.054902, 1)
 
 [node name="ui_ux" type="CanvasLayer"]
+
+[node name="lose" parent="." instance=ExtResource("1_a6grp")]
+script = ExtResource("2_bwjk0")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -390,15 +394,11 @@ theme_override_fonts/font = ExtResource("2_71h1p")
 theme_override_font_sizes/font_size = 30
 text = "Press enter to change day"
 
-[node name="lose" parent="." instance=ExtResource("8_xdste")]
-visible = false
-
 [node name="wingood" parent="." instance=ExtResource("9_a6grp")]
 visible = false
 
 [node name="winperfect" parent="." instance=ExtResource("10_bwjk0")]
 visible = false
 
-[editable path="lose"]
 [editable path="wingood"]
 [editable path="winperfect"]

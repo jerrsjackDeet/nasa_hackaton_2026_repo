@@ -1,24 +1,27 @@
 [gd_scene load_steps=3 format=3 uid="uid://uk8n6376sly8"]
 
-[ext_resource type="Script" uid="uid://dnweq2bhv73dh" path="res://script/endgame.gd" id="1_dcuqu"]
+[ext_resource type="Script" uid="uid://ddv4kcy8t6nup" path="res://script/lose.gd" id="1_dcuqu"]
 [ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_0thep"]
 
-[node name="lose" type="Node2D"]
+[node name="lose" type="CanvasLayer"]
+layer = 100
 script = ExtResource("1_dcuqu")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.275
-anchor_bottom = 0.15
-offset_right = 1148.0
-offset_bottom = 642.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.196078, 0.196078, 0.196078, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -31,6 +34,8 @@ offset_bottom = 295.0
 theme_override_fonts/font = ExtResource("2_0thep")
 theme_override_font_sizes/font_size = 100
 text = "Better Luck Next Time"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Control"]
@@ -43,4 +48,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.368627)
 theme_override_fonts/font = ExtResource("2_0thep")
 theme_override_font_sizes/font_size = 50
 text = "Press any key to main menu"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

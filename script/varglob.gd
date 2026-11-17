@@ -106,3 +106,17 @@ func _day_5():
 		elif electrict <= 50 or food <= 50 or oksigen <= 50 or health <= 50:
 			winG = true
 		
+func reset_game() -> void:
+	electrict = 50
+	food = 50
+	oksigen = 50
+	health = 50
+	hidro_on = false
+	o2_on = false
+	elect_on = false
+	health_on = false
+	nowday = day.day1
+	dayend = false
+	winP = false
+	winG = false
+	losegame = false
