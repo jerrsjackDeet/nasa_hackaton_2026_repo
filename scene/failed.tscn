@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkyyf2380xkah"]
 
 [ext_resource type="Script" uid="uid://dnweq2bhv73dh" path="res://script/endgame.gd" id="1_uyoo6"]
-[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_0thep"]
+[ext_resource type="FontFile" uid="uid://cw111fswwma7f" path="res://assets/CutePixel.ttf" id="2_0thep"]
 
 [node name="lose" type="Node2D"]
 script = ExtResource("1_uyoo6")

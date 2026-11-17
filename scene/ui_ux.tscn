@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bec71hy00qjys" path="res://script/bar_resource.gd" id="1_g4ua4"]
 [ext_resource type="Script" uid="uid://cq860vr8m1fc5" path="res://script/ui_dll.gd" id="1_jq5cw"]
 [ext_resource type="Texture2D" uid="uid://c5b7xsleobc41" path="res://assets/Panel_Bar.png" id="2_0c5nd"]
-[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_71h1p"]
+[ext_resource type="FontFile" uid="uid://cw111fswwma7f" path="res://assets/CutePixel.ttf" id="2_71h1p"]
 [ext_resource type="Texture2D" uid="uid://dngqmevwgfbt1" path="res://assets/sun_icon.png" id="4_fh4cu"]
 [ext_resource type="Texture2D" uid="uid://cnyfecvpnma3b" path="res://assets/Panel_Information.png" id="6_053p3"]
 [ext_resource type="Texture2D" uid="uid://butd6jhupwmp3" path="res://assets/paneltask.png" id="6_ooy7e"]

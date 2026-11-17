@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://uk8n6376sly8"]
 
 [ext_resource type="Script" uid="uid://ddv4kcy8t6nup" path="res://script/lose.gd" id="1_dcuqu"]
-[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_0thep"]
+[ext_resource type="FontFile" uid="uid://cw111fswwma7f" path="res://assets/CutePixel.ttf" id="2_0thep"]
 
 [node name="lose" type="CanvasLayer"]
 layer = 100

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bq4eeu0orq5kw" path="res://assets/character.png" id="2_i6l24"]
 [ext_resource type="Texture2D" uid="uid://ckfw7tplfgvuk" path="res://assets/hidroponikbubble.png" id="3_s478e"]
 [ext_resource type="Texture2D" uid="uid://cfn3frkjgjuom" path="res://assets/pos-bulan-roket-debu.png" id="3_tigle"]
-[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="4_tigle"]
+[ext_resource type="FontFile" uid="uid://cw111fswwma7f" path="res://assets/CutePixel.ttf" id="4_tigle"]
 [ext_resource type="PackedScene" uid="uid://shwdyuwoek8e" path="res://scene/ui_ux.tscn" id="5_kqs2q"]
 [ext_resource type="Texture2D" uid="uid://c3o5d2jet152i" path="res://assets/tombol-masuk-normal.png" id="6_7cdtv"]
 

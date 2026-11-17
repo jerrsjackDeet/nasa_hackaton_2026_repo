@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vb735gpk8p10" path="res://script/narasi.gd" id="1_gxq3k"]
 [ext_resource type="Texture2D" uid="uid://cnyfecvpnma3b" path="res://assets/Panel_Information.png" id="1_levvm"]
-[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_i1mpy"]
+[ext_resource type="FontFile" uid="uid://cw111fswwma7f" path="res://assets/CutePixel.ttf" id="2_i1mpy"]
 
 [node name="narasi" type="Node2D"]
 script = ExtResource("1_gxq3k")

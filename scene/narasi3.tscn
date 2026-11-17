@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://xjpcet58cixd"]
 
 [ext_resource type="Texture2D" uid="uid://cnyfecvpnma3b" path="res://assets/Panel_Information.png" id="1_f4gb1"]
-[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_iqfmp"]
+[ext_resource type="FontFile" uid="uid://cw111fswwma7f" path="res://assets/CutePixel.ttf" id="2_iqfmp"]
 
 [node name="narasi" type="Node2D"]
 

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bq4eeu0orq5kw" path="res://assets/character.png" id="2_goyt1"]
 [ext_resource type="Texture2D" uid="uid://dcrqtc088xpyf" path="res://assets/oxygenbubble.png" id="3_no3pq"]
 [ext_resource type="Texture2D" uid="uid://m1xuec3bdfme" path="res://assets/energybubble.png" id="3_tlfdn"]
-[ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="4_07pa8"]
+[ext_resource type="FontFile" uid="uid://cw111fswwma7f" path="res://assets/CutePixel.ttf" id="4_07pa8"]
 [ext_resource type="PackedScene" uid="uid://shwdyuwoek8e" path="res://scene/ui_ux.tscn" id="4_76txx"]
 [ext_resource type="Texture2D" uid="uid://c3o5d2jet152i" path="res://assets/tombol-masuk-normal.png" id="5_0aubw"]
 [ext_resource type="Texture2D" uid="uid://csgjpqcffhdmq" path="res://assets/medis&radiation_bubble.png" id="6_h4xw4"]

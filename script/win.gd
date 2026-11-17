@@ -20,7 +20,7 @@ func _input(event: InputEvent) -> void:
 		Varglob.winP = false
 		can_press = false
 		Varglob.reset_game()
-		get_tree().change_scene_to_file("res://scenes/outpost.tscn")
+		get_tree().change_scene_to_file("res://scene/main_menu.tscn")
 		
 		
 		

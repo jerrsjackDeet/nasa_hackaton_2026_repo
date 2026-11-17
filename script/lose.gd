@@ -31,11 +31,11 @@ func _input(event: InputEvent) -> void:
 		can_press = false
 		Varglob.reset_game()
 		get_tree().paused = false
-		get_tree().change_scene_to_file("res://scene/outpost.tscn")
+		get_tree().change_scene_to_file("res://scene/main_menu.tscn")
 		
 	elif event is InputEventMouseButton and event.pressed:
 		can_press = false
 		Varglob.reset_game()
 		get_tree().paused = false
-		get_tree().change_scene_to_file("res://scene/outpost.tscn")
+		get_tree().change_scene_to_file("res://scene/main_menu.tscn")
 		
