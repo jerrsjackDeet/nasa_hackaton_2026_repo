@@ -35,7 +35,6 @@ func _ready() -> void:
 	print(badai_matahari)
 func _process(delta: float) -> void:
 	
-	
 	if electrict <= 0 or food <= 0 or oksigen <= 0 or health <= 0:
 		losegame = true
 	
@@ -69,8 +68,6 @@ func _process(delta: float) -> void:
 			health += 2 * delta
 			electrict -= 1 * delta
 		
-	
-	
 	
 	
 	if dayend == true:

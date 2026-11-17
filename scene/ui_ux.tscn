@@ -5,12 +5,12 @@
 [ext_resource type="Script" uid="uid://cq860vr8m1fc5" path="res://script/ui_dll.gd" id="1_jq5cw"]
 [ext_resource type="Texture2D" uid="uid://c5b7xsleobc41" path="res://assets/Panel_Bar.png" id="2_0c5nd"]
 [ext_resource type="FontFile" uid="uid://d1plaqedlkgxb" path="res://assets/CutePixel.ttf" id="2_71h1p"]
-[ext_resource type="Script" uid="uid://ddv4kcy8t6nup" path="res://script/lose.gd" id="2_bwjk0"]
 [ext_resource type="Texture2D" uid="uid://dngqmevwgfbt1" path="res://assets/sun_icon.png" id="4_fh4cu"]
 [ext_resource type="Texture2D" uid="uid://cnyfecvpnma3b" path="res://assets/Panel_Information.png" id="6_053p3"]
 [ext_resource type="Texture2D" uid="uid://butd6jhupwmp3" path="res://assets/paneltask.png" id="6_ooy7e"]
 [ext_resource type="PackedScene" uid="uid://r4vj0e2t6fg7" path="res://scene/wingood.tscn" id="9_a6grp"]
 [ext_resource type="PackedScene" uid="uid://cvn76rbpxxhwg" path="res://scene/winperfect.tscn" id="10_bwjk0"]
+[ext_resource type="Script" uid="uid://d1xu0x26mgu5j" path="res://script/win.gd" id="11_bwjk0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71h1p"]
 bg_color = Color(0.921569, 0.0313726, 0.054902, 1)
@@ -27,7 +27,7 @@ bg_color = Color(0.921569, 0.796078, 0.054902, 1)
 [node name="ui_ux" type="CanvasLayer"]
 
 [node name="lose" parent="." instance=ExtResource("1_a6grp")]
-script = ExtResource("2_bwjk0")
+visible = false
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -396,9 +396,17 @@ text = "Press enter to change day"
 
 [node name="wingood" parent="." instance=ExtResource("9_a6grp")]
 visible = false
+script = ExtResource("11_bwjk0")
+
+[node name="ColorRect" parent="wingood/LoseScreen" index="0"]
+offset_right = 1159.0
 
 [node name="winperfect" parent="." instance=ExtResource("10_bwjk0")]
 visible = false
+script = ExtResource("11_bwjk0")
+
+[node name="ColorRect" parent="winperfect/LoseScreen" index="0"]
+offset_right = 1158.0
 
 [editable path="wingood"]
 [editable path="winperfect"]
