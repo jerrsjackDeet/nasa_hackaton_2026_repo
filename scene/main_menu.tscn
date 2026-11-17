@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://c136onpmcbgj7"]
+[gd_scene load_steps=6 format=3 uid="uid://c136onpmcbgj7"]
 
-[node name="main_menu" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://d01bxvo6hsbnu" path="res://assets/Untitled_Design_2.jpg" id="1_3er1b"]
+[ext_resource type="Script" uid="uid://dgssgn5o4x84a" path="res://scene/main_menu.gd" id="1_sepwh"]
+[ext_resource type="Texture2D" uid="uid://jbrv6c2mwpqo" path="res://assets/Rectangle 1.png" id="2_0iwki"]
+[ext_resource type="Texture2D" uid="uid://c3hnaxr7h17i0" path="res://assets/ButtonPlat-export.png" id="2_2fwvj"]
+[ext_resource type="Texture2D" uid="uid://cub8wt618a61u" path="res://assets/Title Game.png" id="3_0iwki"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_sepwh")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(591, 336)
+texture = ExtResource("1_3er1b")
+
+[node name="Rectangle1" type="Sprite2D" parent="Background"]
+position = Vector2(-3.17978, 0.249985)
+scale = Vector2(0.978027, 0.746582)
+texture = ExtResource("2_0iwki")
+
+[node name="TitleGame" type="Sprite2D" parent="Background"]
+position = Vector2(-23, -123)
+scale = Vector2(0.229444, 0.235151)
+texture = ExtResource("3_0iwki")
+
+[node name="ButtonPlay" type="TextureButton" parent="."]
+offset_left = 429.0
+offset_top = 353.0
+offset_right = 972.0
+offset_bottom = 647.0
+scale = Vector2(0.492676, 0.492676)
+texture_normal = ExtResource("2_2fwvj")
+stretch_mode = 5
+
+[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
