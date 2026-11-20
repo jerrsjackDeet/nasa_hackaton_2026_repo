@@ -5,6 +5,9 @@ extends Node2D
 func _ready() -> void:
 	pass
 func _process(delta: float) -> void:
+	
+	Varglob.mainmenu = false
+	
 	if Varglob.ask_in_post == true:
 		$"door_post/Tombol-masuk-normal".visible = true
 	else:

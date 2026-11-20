@@ -8,6 +8,7 @@ func _ready() -> void:
 	pass
 func _process(delta: float) -> void:
 	
+	Varglob.mainmenu = false
 	
 	if Varglob.ask_out_post == true:
 		$"door_out_facility/Tombol-masuk-normal".visible = true

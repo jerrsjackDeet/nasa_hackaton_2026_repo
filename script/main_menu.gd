@@ -1,5 +1,7 @@
 extends Control
 
-
+func _process(delta: float) -> void:
+	Varglob.mainmenu = true
+	
 func _on_button_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://scene/outpost.tscn")

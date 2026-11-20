@@ -27,6 +27,7 @@ var dayend = false
 var winP = false
 var winG = false
 var losegame = false
+var mainmenu = false
 
 func _ready() -> void:
 	nowday =  day.day1
@@ -34,6 +35,7 @@ func _ready() -> void:
 	debu_bulan = randi_range(day.day2, day.day5)
 	print(badai_matahari)
 func _process(delta: float) -> void:
+	
 	
 	if electrict <= 0 or food <= 0 or oksigen <= 0 or health <= 0:
 		losegame = true
@@ -49,7 +51,7 @@ func _process(delta: float) -> void:
 	elif nowday == day.day5:
 		_day_5()
 	
-	if dayend == false and winG == false and winP == false and losegame == false:
+	if mainmenu == false and dayend == false and winG == false and winP == false and losegame == false:
 		oksigen -= 0.2 * delta
 		electrict = clamp(electrict, 0, 100)
 		food = clamp(food, 0, 100)
